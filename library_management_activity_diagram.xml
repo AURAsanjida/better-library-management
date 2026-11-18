@@ -1,0 +1,310 @@
+<mxfile host="app.diagrams.net" modified="2026-11-18T04:42:00.000Z" agent="5.0" etag="library_activity_diagram" version="21.0.0" type="device">
+  <diagram id="LibraryActivityDiagram" name="Library Management Activity Diagram">
+    <mxGraphModel dx="1422" dy="794" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="1400" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        
+        <!-- Swimlane Container -->
+        <mxCell id="pool" value="Library Management System - Book Borrowing &amp; Returning Process" style="swimlane;childLayout=stackLayout;resizeParent=1;resizeParentMax=0;horizontal=1;startSize=30;horizontalStack=0;html=1;fontStyle=1;fontSize=14;fillColor=#f5f5f5;strokeColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="40" y="40" width="960" height="1280" as="geometry" />
+        </mxCell>
+        
+        <!-- Member Swimlane -->
+        <mxCell id="lane_member" value="Library Member" style="swimlane;html=1;startSize=30;horizontal=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;fontSize=12;" vertex="1" parent="pool">
+          <mxGeometry y="30" width="320" height="1250" as="geometry" />
+        </mxCell>
+        
+        <!-- System Swimlane -->
+        <mxCell id="lane_system" value="Library System" style="swimlane;html=1;startSize=30;horizontal=1;fillColor=#d5e8d4;strokeColor=#82b366;fontStyle=1;fontSize=12;" vertex="1" parent="pool">
+          <mxGeometry x="320" y="30" width="340" height="1250" as="geometry" />
+        </mxCell>
+        
+        <!-- Librarian Swimlane -->
+        <mxCell id="lane_librarian" value="Librarian" style="swimlane;html=1;startSize=30;horizontal=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontStyle=1;fontSize=12;" vertex="1" parent="pool">
+          <mxGeometry x="660" y="30" width="300" height="1250" as="geometry" />
+        </mxCell>
+
+        <!-- MEMBER NODES -->
+        <!-- Initial Node -->
+        <mxCell id="start" value="" style="ellipse;html=1;shape=startState;fillColor=#000000;strokeColor=#000000;" vertex="1" parent="lane_member">
+          <mxGeometry x="145" y="50" width="30" height="30" as="geometry" />
+        </mxCell>
+        
+        <!-- Login / Register -->
+        <mxCell id="act_login" value="Enter Login Credentials" style="rounded=1;whiteSpace=wrap;html=1;arcSize=40;fillColor=#ffffff;strokeColor=#6c8ebf;" vertex="1" parent="lane_member">
+          <mxGeometry x="90" y="110" width="140" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- Search Book -->
+        <mxCell id="act_search" value="Search Book in Catalog" style="rounded=1;whiteSpace=wrap;html=1;arcSize=40;fillColor=#ffffff;strokeColor=#6c8ebf;" vertex="1" parent="lane_member">
+          <mxGeometry x="90" y="270" width="140" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- Select Action Decision -->
+        <mxCell id="dec_action" value="Borrow or Return?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="lane_member">
+          <mxGeometry x="105" y="420" width="110" height="70" as="geometry" />
+        </mxCell>
+
+        <!-- Request Borrow -->
+        <mxCell id="act_req_borrow" value="Request Book Issue" style="rounded=1;whiteSpace=wrap;html=1;arcSize=40;fillColor=#ffffff;strokeColor=#6c8ebf;" vertex="1" parent="lane_member">
+          <mxGeometry x="90" y="530" width="140" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- Receive Book -->
+        <mxCell id="act_receive" value="Receive Issued Book" style="rounded=1;whiteSpace=wrap;html=1;arcSize=40;fillColor=#ffffff;strokeColor=#6c8ebf;" vertex="1" parent="lane_member">
+          <mxGeometry x="90" y="750" width="140" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- Submit Book for Return -->
+        <mxCell id="act_submit_return" value="Submit Book for Return" style="rounded=1;whiteSpace=wrap;html=1;arcSize=40;fillColor=#ffffff;strokeColor=#6c8ebf;" vertex="1" parent="lane_member">
+          <mxGeometry x="90" y="850" width="140" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- Pay Fine -->
+        <mxCell id="act_pay_fine" value="Pay Overdue Fine" style="rounded=1;whiteSpace=wrap;html=1;arcSize=40;fillColor=#ffffff;strokeColor=#6c8ebf;" vertex="1" parent="lane_member">
+          <mxGeometry x="90" y="1020" width="140" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- Final Node -->
+        <mxCell id="end" value="" style="ellipse;html=1;shape=endState;fillColor=#000000;strokeColor=#000000;" vertex="1" parent="lane_member">
+          <mxGeometry x="145" y="1180" width="30" height="30" as="geometry" />
+        </mxCell>
+
+        <!-- SYSTEM NODES -->
+        <!-- Verify Credentials -->
+        <mxCell id="act_verify" value="Verify Member Credentials" style="rounded=1;whiteSpace=wrap;html=1;arcSize=40;fillColor=#ffffff;strokeColor=#82b366;" vertex="1" parent="lane_system">
+          <mxGeometry x="100" y="110" width="140" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- Decision Valid Login -->
+        <mxCell id="dec_login" value="Valid?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="lane_system">
+          <mxGeometry x="130" y="180" width="80" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- Check Availability -->
+        <mxCell id="act_check_avail" value="Check Book Availability &amp; Member Limit" style="rounded=1;whiteSpace=wrap;html=1;arcSize=40;fillColor=#ffffff;strokeColor=#82b366;" vertex="1" parent="lane_system">
+          <mxGeometry x="95" y="270" width="150" height="45" as="geometry" />
+        </mxCell>
+
+        <!-- Decision Available -->
+        <mxCell id="dec_avail" value="Available &amp; Eligible?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="lane_system">
+          <mxGeometry x="115" y="345" width="110" height="70" as="geometry" />
+        </mxCell>
+
+        <!-- Notify Unavailable -->
+        <mxCell id="act_notify_unavail" value="Display Unavailable / Limit Reached" style="rounded=1;whiteSpace=wrap;html=1;arcSize=40;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="lane_system">
+          <mxGeometry x="100" y="450" width="140" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- Update Inventory (Issue) -->
+        <mxCell id="act_update_issue" value="Update Inventory &amp; Set Due Date" style="rounded=1;whiteSpace=wrap;html=1;arcSize=40;fillColor=#ffffff;strokeColor=#82b366;" vertex="1" parent="lane_system">
+          <mxGeometry x="100" y="670" width="140" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- Check Due Date -->
+        <mxCell id="act_check_due" value="Check Return Date Against Due Date" style="rounded=1;whiteSpace=wrap;html=1;arcSize=40;fillColor=#ffffff;strokeColor=#82b366;" vertex="1" parent="lane_system">
+          <mxGeometry x="100" y="850" width="140" height="45" as="geometry" />
+        </mxCell>
+
+        <!-- Decision Overdue -->
+        <mxCell id="dec_overdue" value="Overdue?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="lane_system">
+          <mxGeometry x="130" y="930" width="80" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- Calculate Fine -->
+        <mxCell id="act_calc_fine" value="Calculate Overdue Fine" style="rounded=1;whiteSpace=wrap;html=1;arcSize=40;fillColor=#ffffff;strokeColor=#82b366;" vertex="1" parent="lane_system">
+          <mxGeometry x="100" y="1020" width="140" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- Update Inventory (Return) -->
+        <mxCell id="act_update_return" value="Mark Book Returned &amp; Update Stock" style="rounded=1;whiteSpace=wrap;html=1;arcSize=40;fillColor=#ffffff;strokeColor=#82b366;" vertex="1" parent="lane_system">
+          <mxGeometry x="100" y="1100" width="140" height="45" as="geometry" />
+        </mxCell>
+
+        <!-- LIBRARIAN NODES -->
+        <!-- Validate Request -->
+        <mxCell id="act_approve" value="Verify Member Card &amp; Approve Issue" style="rounded=1;whiteSpace=wrap;html=1;arcSize=40;fillColor=#ffffff;strokeColor=#d79b00;" vertex="1" parent="lane_librarian">
+          <mxGeometry x="80" y="530" width="140" height="45" as="geometry" />
+        </mxCell>
+
+        <!-- Handover Book -->
+        <mxCell id="act_handover" value="Scan &amp; Hand Over Physical Book" style="rounded=1;whiteSpace=wrap;html=1;arcSize=40;fillColor=#ffffff;strokeColor=#d79b00;" vertex="1" parent="lane_librarian">
+          <mxGeometry x="80" y="670" width="140" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- Inspect Book -->
+        <mxCell id="act_inspect" value="Inspect Returned Book Condition" style="rounded=1;whiteSpace=wrap;html=1;arcSize=40;fillColor=#ffffff;strokeColor=#d79b00;" vertex="1" parent="lane_librarian">
+          <mxGeometry x="80" y="850" width="140" height="45" as="geometry" />
+        </mxCell>
+
+        <!-- Collect Fine & Receipt -->
+        <mxCell id="act_receipt" value="Confirm Payment &amp; Issue Receipt" style="rounded=1;whiteSpace=wrap;html=1;arcSize=40;fillColor=#ffffff;strokeColor=#d79b00;" vertex="1" parent="lane_librarian">
+          <mxGeometry x="80" y="1020" width="140" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- EDGES / TRANSITIONS -->
+        <mxCell id="e1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" edge="1" parent="pool" source="start" target="act_login">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="e2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" edge="1" parent="pool" source="act_login" target="act_verify">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="e3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" edge="1" parent="pool" source="act_verify" target="dec_login">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="e4" value="No" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" edge="1" parent="pool" source="dec_login" target="act_login">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="270" y="240" />
+              <mxPoint x="270" y="160" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="e5" value="Yes" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" edge="1" parent="pool" source="dec_login" target="act_search">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="490" y="290" />
+              <mxPoint x="160" y="290" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="e6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" edge="1" parent="pool" source="act_search" target="act_check_avail">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="e7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" edge="1" parent="pool" source="act_check_avail" target="dec_avail">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="e8" value="No" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" edge="1" parent="pool" source="dec_avail" target="act_notify_unavail">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="e9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" edge="1" parent="pool" source="act_notify_unavail" target="end">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="620" y="500" />
+              <mxPoint x="620" y="1225" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="e10" value="Yes" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" edge="1" parent="pool" source="dec_avail" target="dec_action">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="370" y="410" />
+              <mxPoint x="370" y="485" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="e11" value="Borrow" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" edge="1" parent="pool" source="dec_action" target="act_req_borrow">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="e12" value="Return" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" edge="1" parent="pool" source="dec_action" target="act_submit_return">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="40" y="485" />
+              <mxPoint x="40" y="900" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="e13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" edge="1" parent="pool" source="act_req_borrow" target="act_approve">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="e14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" edge="1" parent="pool" source="act_approve" target="act_handover">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="e15" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" edge="1" parent="pool" source="act_handover" target="act_update_issue">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="e16" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" edge="1" parent="pool" source="act_update_issue" target="act_receive">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="490" y="800" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="e17" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" edge="1" parent="pool" source="act_receive" target="end">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="60" y="800" />
+              <mxPoint x="60" y="1225" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="e18" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" edge="1" parent="pool" source="act_submit_return" target="act_check_due">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="e19" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" edge="1" parent="pool" source="act_check_due" target="act_inspect">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="e20" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" edge="1" parent="pool" source="act_inspect" target="dec_overdue">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="810" y="990" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="e21" value="Yes" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" edge="1" parent="pool" source="dec_overdue" target="act_calc_fine">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="e22" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" edge="1" parent="pool" source="act_calc_fine" target="act_pay_fine">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="e23" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" edge="1" parent="pool" source="act_pay_fine" target="act_receipt">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="160" y="1115" />
+              <mxPoint x="810" y="1115" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="e24" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" edge="1" parent="pool" source="act_receipt" target="act_update_return">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="810" y="1152" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="e25" value="No" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" edge="1" parent="pool" source="dec_overdue" target="act_update_return">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="360" y="990" />
+              <mxPoint x="360" y="1152" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="e26" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" edge="1" parent="pool" source="act_update_return" target="end">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="490" y="1225" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
